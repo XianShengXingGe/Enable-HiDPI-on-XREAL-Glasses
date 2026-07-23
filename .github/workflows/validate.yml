@@ -1,0 +1,23 @@
+name: Validate / 校验
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  shell-and-checksum:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate shell syntax / 校验 Shell 语法
+        run: |
+          bash -n hidpi.sh
+          bash -n uninstall-hidpi.sh
+          bash -n hidpi.command
+          bash -n uninstall-hidpi.command
+      - name: Verify release checksums / 验证发布文件校验和
+        run: shasum -a 256 -c CHECKSUMS.txt

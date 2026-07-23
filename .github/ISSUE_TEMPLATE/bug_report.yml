@@ -1,0 +1,67 @@
+name: Bug report / 问题报告
+description: Report an installation, detection, display-mode, or restore problem. / 反馈安装、识别、显示模式或恢复问题。
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include full EDID data, complete `ioreg` output, device identifiers, personal paths, or unredacted logs.
+        请勿包含完整 EDID 数据、完整 `ioreg` 输出、设备识别参数、个人路径或未脱敏日志。
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: Mac architecture / Mac 架构
+      options:
+        - Apple Silicon / Apple 芯片
+        - Intel / 英特尔
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version / macOS 版本
+      placeholder: "For example: 15.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: failed_step
+    attributes:
+      label: First step that failed / 最先失败的步骤
+      options:
+        - Compatible display was not detected / 未检测到兼容设备
+        - Administrator permission request / 管理员权限请求
+        - Installation script / 安装脚本
+        - Restart / 重启
+        - Selecting the new mode / 选择新增模式
+        - Restore script / 恢复脚本
+        - Other / 其他
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened? / 发生了什么？
+      description: Share redacted error text and the observed behavior. Remove private paths and identification fields. / 请提供已脱敏的错误信息和实际表现；移除私人路径和识别字段。
+    validations:
+      required: true
+  - type: dropdown
+    id: other_displays
+    attributes:
+      label: Other displays or a dock connected? / 是否连接其他显示器或扩展坞？
+      options:
+        - No / 否
+        - Yes / 是
+        - Not sure / 不确定
+    validations:
+      required: true
+  - type: dropdown
+    id: restore
+    attributes:
+      label: Did the restore script work? / 恢复脚本是否成功？
+      options:
+        - Not attempted / 未尝试
+        - Yes / 是
+        - No / 否
+    validations:
+      required: true

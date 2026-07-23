@@ -1,0 +1,52 @@
+name: Compatibility report / 兼容性报告
+description: Share a successful or unsuccessful compatibility result without sensitive device data. / 分享成功或失败的兼容性结果，但请勿提供敏感设备数据。
+title: "[Compatibility]: "
+labels: [compatibility]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include full EDID data, complete `ioreg` output, device identifiers, personal paths, or unredacted logs.
+        请勿包含完整 EDID 数据、完整 `ioreg` 输出、设备识别参数、个人路径或未脱敏日志。
+  - type: dropdown
+    id: architecture
+    attributes:
+      label: Mac architecture / Mac 架构
+      options:
+        - Apple Silicon / Apple 芯片
+        - Intel / 英特尔
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version / macOS 版本
+    validations:
+      required: true
+  - type: dropdown
+    id: mode
+    attributes:
+      label: Was a new HiDPI option available after restart? / 重启后是否出现新增 HiDPI 选项？
+      options:
+        - Yes / 是
+        - No / 否
+        - Not tested / 未测试
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Display behavior / 显示表现
+      description: Describe available refresh rates and results after reconnecting, sleeping, and restarting. Do not include identifying output. / 请说明可用刷新率及重新连接、睡眠和重启后的表现；不要包含识别信息。
+    validations:
+      required: true
+  - type: dropdown
+    id: restore
+    attributes:
+      label: Restore result / 恢复结果
+      options:
+        - Restored successfully / 恢复成功
+        - Restore failed / 恢复失败
+        - Not tested / 未测试
+    validations:
+      required: true
