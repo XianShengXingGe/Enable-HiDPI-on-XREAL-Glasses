@@ -70,7 +70,7 @@ Glasses receive: 1920 × 1080
 
 ### Privacy and security
 
-The scripts do not collect, upload, download, or execute remote code. Compatibility is checked locally using the bundled configuration, and user-facing output does not expose its internal values.
+The scripts do not collect, upload, download, or execute remote code.
 
 This is information minimization and obfuscation, not a security boundary. A local administrator can inspect generated system configuration. When filing an issue, remove personal information and unredacted logs. See [SECURITY.md](SECURITY.md) and the issue templates for safe reporting guidance.
 
@@ -167,7 +167,7 @@ macOS 缩放输出：1920 × 1080
 
 ### 隐私与安全
 
-脚本不收集、不上传、不下载，也不会执行远程代码。兼容性检查仅在本机通过随工具发布的配置完成，用户可见输出不会暴露其中的内部参数。
+脚本不收集、不上传、不下载，也不会执行远程代码。
 
 这属于信息最小化和混淆，不是安全边界。本机管理员仍可检查生成后的系统配置。提交 Issue 时，请移除个人信息和未脱敏日志。安全问题与脱敏要求见 [SECURITY.md](SECURITY.md) 和 Issue 模板。
 

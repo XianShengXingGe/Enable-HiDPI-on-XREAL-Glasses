@@ -18,7 +18,7 @@ All notable changes to this project will be documented in this file.
 - 已从公开安装脚本中移除旧内部状态迁移逻辑。
 - 已避免将设备专属配置数据以直接可读字段写入源码。
 
-## v0.1.0 — Experimental preview / 实验性预览版
+## v1.0 — Experimental preview / 实验性预览版
 
 Initial public release candidate. Real-device installation and restore coverage remains limited; see the README before use.
 
