@@ -4,12 +4,13 @@
 
 ## English
 
-An experimental macOS helper that registers preset HiDPI modes for compatible XREAL Glasses. It detects supported devices automatically; users do not enter device identifiers or display parameters.
+An experimental macOS helper that registers preset HiDPI modes for compatible XREAL Glasses equipped with the X1 chip. It detects supported devices automatically; users do not need to configure device-specific values manually.
 
 > **Experimental:** This tool modifies macOS display override files and relies on implementation details that can change between macOS releases. Use it at your own risk, back up important work before installation, and keep the restore script available.
 
 ### Before you begin
 
+- **Support scope:** This release supports only XREAL Glasses equipped with the **X1 chip**. XREAL Glasses with other chips are not supported.
 - Connect and power on a compatible XREAL Glasses device.
 - Use a macOS administrator account. The scripts request elevation only to write or restore the relevant system configuration.
 - Compatibility depends on macOS version, Mac hardware, cables, docks, and the display chain. Registering a mode does not guarantee that macOS selects it automatically.
@@ -69,9 +70,9 @@ Glasses receive: 1920 × 1080
 
 ### Privacy and security
 
-The scripts do not collect, upload, download, or execute remote code. The public repository contains no plaintext VID, PID, EDID dump, or device-name-to-identifier table. Device identification happens locally at runtime; the shipped allow-list uses one-way fingerprints, and the scripts do not print the underlying identifiers.
+The scripts do not collect, upload, download, or execute remote code. Compatibility is checked locally using the bundled configuration, and user-facing output does not expose its internal values.
 
-This is information minimization and obfuscation, not a security boundary. A local administrator can inspect generated system configuration. When filing an issue, do not include a full EDID dump, complete `ioreg` output, personal paths, or device-identification fields. See [SECURITY.md](SECURITY.md) and the issue templates for safe reporting guidance.
+This is information minimization and obfuscation, not a security boundary. A local administrator can inspect generated system configuration. When filing an issue, remove personal information and unredacted logs. See [SECURITY.md](SECURITY.md) and the issue templates for safe reporting guidance.
 
 ### References and attribution
 
@@ -100,12 +101,13 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 中文
 
-这是一个实验性的 macOS 辅助工具，用于为兼容的 XREAL Glasses 注册预设 HiDPI 模式。它会自动识别兼容设备；用户不需要输入设备识别信息或显示参数。
+这是一个实验性的 macOS 辅助工具，用于为搭载 X1 芯片的兼容 XREAL Glasses 注册预设 HiDPI 模式。它会自动识别兼容设备；用户不需要手动配置设备专属参数。
 
 > **实验性工具：** 本工具会修改 macOS 显示 Override 文件，并依赖可能随 macOS 版本变化的实现细节。请自行评估风险；安装前请保存重要工作，并保留恢复脚本。
 
 ### 使用前须知
 
+- **支持范围：** 当前版本仅支持搭载 **X1 芯片** 的 XREAL Glasses，不支持搭载其他芯片的 XREAL 眼镜。
 - 请连接并点亮兼容的 XREAL Glasses 设备。
 - 请使用 macOS 管理员账户。脚本仅在写入或恢复相关系统配置时请求提权。
 - 兼容性取决于 macOS 版本、Mac 硬件、线材、扩展坞和显示链路。注册模式不保证 macOS 会自动选中它。
@@ -165,9 +167,9 @@ macOS 缩放输出：1920 × 1080
 
 ### 隐私与安全
 
-脚本不收集、不上传、不下载，也不会执行远程代码。公开仓库不包含明文 VID、PID、EDID 转储，或“设备名称—识别参数”对照表。设备识别仅在本机运行时完成；随工具发布的允许列表使用单向指纹，脚本也不会打印底层识别参数。
+脚本不收集、不上传、不下载，也不会执行远程代码。兼容性检查仅在本机通过随工具发布的配置完成，用户可见输出不会暴露其中的内部参数。
 
-这属于信息最小化和混淆，不是安全边界。本机管理员仍可检查生成后的系统配置。提交 Issue 时，请勿粘贴完整 EDID、完整 `ioreg` 输出、个人路径或设备识别字段。安全问题与脱敏要求见 [SECURITY.md](SECURITY.md) 和 Issue 模板。
+这属于信息最小化和混淆，不是安全边界。本机管理员仍可检查生成后的系统配置。提交 Issue 时，请移除个人信息和未脱敏日志。安全问题与脱敏要求见 [SECURITY.md](SECURITY.md) 和 Issue 模板。
 
 ### 参考项目与致谢
 
